@@ -1,4 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
-
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 file:///C:/Users/robso/Documents/GitHub/AutoSAR%20Demo/AUTOSAR_MMOD_XMLSchema/AUTOSAR_00046.xsd">
+	<AR-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>Interfaces</SHORT-NAME>
+			<ELEMENTS>
+				<SENDER-RECEIVER-INTERFACE>
+					<SHORT-NAME>I_Temperature</SHORT-NAME>
+					<!--> Interfaces names do not need to follow a specific standard and just have some rules like no spaces</!-->
+					<DATA-ELEMENTS>
+						<VARIABLE-DATA-PROTOTYPE>
+							<SHORT-NAME>Temperature</SHORT-NAME>
+							<SW-DATA-DEF-PROPS>
+								<!--> This is probably mentioning the SW implementation for the data type </!-->
+								<SW-DATA-DEF-PROPS-VARIANTS>
+									<!--> What is this </!-->
+									<SW-DATA-DEF-PROPS-CONDITIONAL>
+										<!--> What is this too </!-->
+										<IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/float32</IMPLEMENTATION-DATA-TYPE-REF>
+									</SW-DATA-DEF-PROPS-CONDITIONAL>
+								</SW-DATA-DEF-PROPS-VARIANTS>
+							</SW-DATA-DEF-PROPS>
+						</VARIABLE-DATA-PROTOTYPE>
+					</DATA-ELEMENTS>
+				</SENDER-RECEIVER-INTERFACE>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>I_StartMotor</SHORT-NAME>
+					<OPERATIONS>
+						<CLIENT-SERVER-OPERATION>
+							<SHORT-NAME>StartMotor</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-DATA-PROTOTYPE>
+									<SHORT-NAME>FanSpeed</SHORT-NAME>
+									<TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">AUTOSAR_PlatformTypes/ImplementationDataTypes/uint8</TYPE-TREF>
+									<DIRECTION>IN</DIRECTION>
+								</ARGUMENT-DATA-PROTOTYPE>
+							</ARGUMENTS>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/Interfaces/I_StartMotor/E_OK</POSSIBLE-ERROR-REF>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/Interfaces/I_StartMotor/E_NOK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</CLIENT-SERVER-OPERATION>
+					</OPERATIONS>
+					<POSSIBLE-ERRORS>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_OK</SHORT-NAME>
+							<ERROR-CODE>0</ERROR-CODE>
+						</APPLICATION-ERROR>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_NOK</SHORT-NAME>
+							<ERROR-CODE>1</ERROR-CODE>
+						</APPLICATION-ERROR>
+					</POSSIBLE-ERRORS>
+				</CLIENT-SERVER-INTERFACE>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>I_StopMotor</SHORT-NAME>
+					<OPERATIONS>
+						<CLIENT-SERVER-OPERATION>
+							<SHORT-NAME>StopMotor</SHORT-NAME>
+							<POSSIBLE-ERROR-REFS>
+								<!--> Note: The possible error refs should be created for each individual interface </!-->
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/Interfaces/I_StopMotor/E_OK</POSSIBLE-ERROR-REF>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/Interfaces/I_StopMotor/E_NOK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</CLIENT-SERVER-OPERATION>
+					</OPERATIONS>
+					<POSSIBLE-ERRORS>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_OK</SHORT-NAME>
+							<ERROR-CODE>0</ERROR-CODE>
+						</APPLICATION-ERROR>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_NOK</SHORT-NAME>
+							<ERROR-CODE>1</ERROR-CODE>
+						</APPLICATION-ERROR>
+					</POSSIBLE-ERRORS>
+				</CLIENT-SERVER-INTERFACE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
 </AUTOSAR>
