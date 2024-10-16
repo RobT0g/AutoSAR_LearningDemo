@@ -58,6 +58,8 @@
 									<MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
 									<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
 									<DATA-SEND-POINTS>
+										<!--> If the runnable sets or receives a value in a port, this is where this behavior needs to be specified </!-->
+										<!--> Since this runnable is going to be triggered by an Operation Invoked Event it can (and will) receive an argument </!-->
 										<VARIABLE-ACCESS>
 											<SHORT-NAME>VA_Temp</SHORT-NAME>
 											<ACCESSED-VARIABLE>
