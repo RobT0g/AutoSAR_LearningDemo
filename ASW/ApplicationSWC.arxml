@@ -62,8 +62,7 @@
 											<SHORT-NAME>SC_StopMotor</SHORT-NAME>
 											<OPERATION-IREF>
 												<CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ASWComponents/TemControlSWC/R_StopMotor</CONTEXT-R-PORT-REF>
-												<TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Interfaces/I_StopMotor/StopMotor</TARGET-REQUIRED-OPERATION-REF>
-												<!--> With this config, we specify that the server call is done by useing the R_StartMotor port and setting the StartMotor argument </!-->
+												<!--> With this config, we specify that the server call is done by useing the R_StartMotor port and don't need arguments </!-->
 											</OPERATION-IREF>
 										</SYNCHRONOUS-SERVER-CALL-POINT>
 									</SERVER-CALL-POINTS>

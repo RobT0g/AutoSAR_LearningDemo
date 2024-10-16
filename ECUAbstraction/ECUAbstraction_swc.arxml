@@ -2,7 +2,7 @@
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 file:///C:/Users/robso/Documents/GitHub/AutoSAR%20Demo/AUTOSAR_MMOD_XMLSchema/AUTOSAR_00046.xsd">
 	<AR-PACKAGES>
 		<AR-PACKAGE>
-			<SHORT-NAME>SWComponents</SHORT-NAME>
+			<SHORT-NAME>BSWComponent</SHORT-NAME>
 			<ELEMENTS>
 				<ECU-ABSTRACTION-SW-COMPONENT-TYPE>
 					<SHORT-NAME>TempHBridgeSWC</SHORT-NAME>
@@ -30,14 +30,14 @@
 								<!-->  Each event will be mapped to a runnable and dependeing on the event type there will be different parameters </!-->
 								<TIMING-EVENT>
 									<SHORT-NAME>TE_10ms</SHORT-NAME>
-									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SWComponents/TempHBridgeSWC/IB_SWC/ReadTemperature</START-ON-EVENT-REF>
+									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BSWComponent/TempHBridgeSWC/IB_SWC/ReadTemperature</START-ON-EVENT-REF>
 									<PERIOD>0.1</PERIOD>
 								</TIMING-EVENT>
 								<OPERATION-INVOKED-EVENT>
 									<SHORT-NAME>OIE_StartMotor</SHORT-NAME>
-									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SWComponents/TempHBridgeSWC/IB_SWC/StartMotor</START-ON-EVENT-REF>
+									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BSWComponent/TempHBridgeSWC/IB_SWC/StartMotor</START-ON-EVENT-REF>
 									<OPERATION-IREF>
-										<CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SWComponents/TempHBridgeSWC/P_StartMotor</CONTEXT-P-PORT-REF>
+										<CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BSWComponent/TempHBridgeSWC/P_StartMotor</CONTEXT-P-PORT-REF>
 										<!--> When the operation is invoked, the application requesting the motor to be started will send a request via the R-Port and it reach this PPort </!-->
 										<!-->This will trigger the OIE_StartMotor event as it is specified on this config </!-->
 										<TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Interfaces/I_StartMotor/StartMotor</TARGET-PROVIDED-OPERATION-REF>
@@ -45,9 +45,9 @@
 								</OPERATION-INVOKED-EVENT>
 								<OPERATION-INVOKED-EVENT>
 									<SHORT-NAME>OIE_StopMotor</SHORT-NAME>
-									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SWComponents/TempHBridgeSWC/IB_SWC/StopMotor</START-ON-EVENT-REF>
+									<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BSWComponent/TempHBridgeSWC/IB_SWC/StopMotor</START-ON-EVENT-REF>
 									<OPERATION-IREF>
-										<CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SWComponents/TempHBridgeSWC/P_StopMotor</CONTEXT-P-PORT-REF>
+										<CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BSWComponent/TempHBridgeSWC/P_StopMotor</CONTEXT-P-PORT-REF>
 										<TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Interfaces/I_StopMotor/StopMotor</TARGET-PROVIDED-OPERATION-REF>
 									</OPERATION-IREF>
 								</OPERATION-INVOKED-EVENT>
@@ -64,7 +64,7 @@
 											<SHORT-NAME>VA_Temp</SHORT-NAME>
 											<ACCESSED-VARIABLE>
 												<AUTOSAR-VARIABLE-IREF>
-													<PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SWComponents/TempHBridgeSWC/P_Temperature</PORT-PROTOTYPE-REF>
+													<PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BSWComponent/TempHBridgeSWC/P_Temperature</PORT-PROTOTYPE-REF>
 													<TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/Interfaces/I_Temperature/Temperature</TARGET-DATA-PROTOTYPE-REF>
 												</AUTOSAR-VARIABLE-IREF>
 											</ACCESSED-VARIABLE>
